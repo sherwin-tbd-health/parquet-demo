@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.18'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // --- Parquet + Hadoop ---
+    implementation 'org.apache.parquet:parquet-hadoop:1.14.3'
+    implementation 'org.apache.parquet:parquet-avro:1.14.3'
+    implementation('org.apache.hadoop:hadoop-common:3.4.1') {
+        exclude group: 'org.slf4j', module: 'slf4j-reload4j'
+        exclude group: 'log4j', module: 'log4j'
+        exclude group: 'ch.qos.reload4j', module: 'reload4j'
+    }
+    implementation('org.apache.hadoop:hadoop-mapreduce-client-core:3.4.1') {
+        exclude group: 'org.slf4j', module: 'slf4j-reload4j'
+        exclude group: 'log4j', module: 'log4j'
+    }
+
+    // --- AWS S3 (v2 SDK) ---
+    implementation platform('software.amazon.awssdk:bom:2.25.37')
+    implementation 'software.amazon.awssdk:s3'
+    implementation 'software.amazon.awssdk:apache-client'
+
+    // --- Spring Boot ---
+    implementation 'org.springframework.boot:spring-boot-starter'
+
+    // --- CSV ---
+    implementation 'org.apache.commons:commons-csv:1.12.0'
+
+    // --- Lombok ---
+    compileOnly 'org.projectlombok:lombok:1.18.28'
+    annotationProcessor 'org.projectlombok:lombok:1.18.28'
+}
