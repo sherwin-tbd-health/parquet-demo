@@ -24,7 +24,7 @@ flowchart LR
   QS -->|"dataset → SQL"| Athena
 ```
 
-*If diagrams do not render in your viewer, open this file on [GitHub](https://github.com) or paste the code blocks into [Mermaid Live Editor](https://mermaid.live).*
+*If diagrams do not render in your viewer, open this file [on GitHub](https://github.com/sherwin-tbd-health/parquet-demo) or paste the code blocks into [Mermaid Live Editor](https://mermaid.live).*
 
 ---
 
