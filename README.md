@@ -79,9 +79,9 @@ flowchart TB
   end
   subgraph parquet [Parquet — columnar chunks]
     direction LR
-    c1["`quantity`<br/>compressed chunks"]
-    c2["`unitPrice`<br/>compressed chunks"]
-    c3["`region`<br/>compressed chunks"]
+    c1["quantity<br/>compressed chunks"]
+    c2["unitPrice<br/>compressed chunks"]
+    c3["region<br/>compressed chunks"]
   end
 ```
 
